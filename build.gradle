@@ -1,0 +1,31 @@
+plugins {
+    id 'org.springframework.boot' version '2.4.3'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'ru.exsoft.likepizza'
+version = '1.0.0-RELEASE'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation group: 'org.springframework.session', name: 'spring-session-core', version: '2.4.2'
+    implementation group: 'org.springframework.session', name: 'spring-session-jdbc', version: '2.4.2'
+    implementation group: 'org.ehcache', name: 'ehcache', version: '3.9.2'
+    compile 'org.hibernate:hibernate-ehcache:5.2.2.Final'
+    implementation 'org.apache.commons:commons-lang3:3.8.1'
+    implementation group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.18'
+    compile 'org.hibernate.validator:hibernate-validator:6.0.13.Final'
+
+    //implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.23'
+    implementation 'org.mariadb.jdbc:mariadb-java-client:2.1.2'
+}
